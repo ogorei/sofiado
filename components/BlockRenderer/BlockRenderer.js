@@ -1,21 +1,23 @@
 import { Cover } from "../Cover";
+import { Heading } from "../Heading";
 
-
-
-// render blocks by name
 export const BlockRenderer = ({ blocks }) => {
-  return blocks.map((block) => {
-    switch (block.name) {
-      case "core/cover": {
-        console.log("COVER BLOCK: ", block);
-        return (
-          <Cover key={block.id} background={block.attributes.url}></Cover>
-        );
-      }
-      default: {
-        console.log("UNKNOWN: ", block);
-        return null;
-      }
-    }
-  });
+	console.log("BLOCKS: ", blocks);
+	return blocks.map(block => {
+		switch (block.name) {
+			case "core/heading": {
+				return <Heading key={block.id} content={block.attributes.content} />;
+			}
+			case "core/cover": {
+				return (
+					<Cover key={block.id} background={block.attributes.url}>
+						<BlockRenderer blocks={block.innerBlocks} />
+					</Cover>
+				);
+			}
+			default: {
+				return null;
+			}
+		}
+	});
 };
