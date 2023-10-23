@@ -1,5 +1,6 @@
 import { Cover } from "../Cover";
 import { Heading } from "../Heading";
+import { Paragraph } from "../Paragraph";
 
 export const BlockRenderer = ({ blocks }) => {
 	console.log("BLOCKS: ", blocks);
@@ -7,6 +8,9 @@ export const BlockRenderer = ({ blocks }) => {
 		switch (block.name) {
 			case "core/heading": {
 				return <Heading key={block.id} content={block.attributes.content} />;
+			}
+      case "core/paragraph": {
+				return <Paragraph key={block.id} content={block.attributes.content} />;
 			}
 			case "core/cover": {
 				return (
