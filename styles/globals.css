@@ -1,18 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
-input {
-  font-size: 16px !important;
-}
+
 
 .swiper-button-prev,
 .swiper-button-next {
   color: #d9333f !important;
 }
 
-body {
-  font-family: 'M PLUS 1p' sans-serif;
-  font-style: normal;
-  font-weight: normal;
+* {
+  font-family: 'Noto Sans JP', sans-serif;
 }

@@ -2,7 +2,12 @@ module.exports = {
   mode: 'jit',
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    /* Mantineと一致させる: https://mantine.dev/theming/responsive */
+    fontSize: {
+      sm: ['10px', '20px'],
+      base: ['14px', '24px'],
+      lg: ['18px', '28px'],
+      xl: ['24px', '32px'],
+    },
     screens: {
       xs: '576px',
       sm: '768px',
@@ -25,7 +30,7 @@ module.exports = {
         'background-ec': "url('/img/backgroud-ec.jpg')",
       }),
       fontFamily: {
-        stencil: ['Allerta Stencil', 'sans-serif'],
+        body: ['Noto Sans JP', 'sans-serif'],
       },
     },
   },
