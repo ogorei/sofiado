@@ -1,18 +1,7 @@
-import React from 'react'
-import { Box } from '@mantine/core'
-import Top from '../components/Top'
-import Head from 'next/head'
+import { Layout } from "@/components/Layout";
+import { getPageStaticProps } from "@/utils/getPageStaticProps";
 
-const Home = () => {
-  return (
-    <div>
-    <Head>
-      <title>SOFIA°</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <Top />
-  </div>
-  )
-}
 
-export default Home
+export default Layout;
+
+export const getStaticProps = getPageStaticProps;
