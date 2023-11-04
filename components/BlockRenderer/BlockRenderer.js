@@ -3,11 +3,19 @@ import {Column} from "../Column";
 import { Cover } from "../Cover";
 import { Heading } from "../Heading";
 import { Paragraph } from "../Paragraph";
+import { PropertySearch } from "../PropertySearch";
 import Image from "next/image";
 
 export const BlockRenderer = ({ blocks }) => {
+  console.log("blocks",blocks)
 	return blocks.map(block => {
 		switch (block.name) {
+      case "core/post-title":{
+        <Heading key={block.id} content={block.attributes.content} />;
+      }
+      case "acf/searchproperty": {
+        return <PropertySearch key={block.id} />;
+      }
 			case "core/heading": {
 				return <Heading key={block.id} content={block.attributes.content} />;
 			}
@@ -31,6 +39,7 @@ export const BlockRenderer = ({ blocks }) => {
         </Columns>
        )
       }
+      
       case "core/column": {
         return (
           <Column

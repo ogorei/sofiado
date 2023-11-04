@@ -28,6 +28,7 @@ export const getStaticPaths = async () => {
 		`
 	});
 	return {
+		// array contain all properties and pages data
 		paths: [...data.pages.nodes, ...data.properties.nodes].filter(page => page.uri !== "/").map(page => ({
 			params: {
 				slug: page.uri.substring(1, page.uri.length - 1).split("/")

@@ -13,6 +13,12 @@ export const getPageStaticProps = async (context) => {
       nodeByUri(uri: $uri) {
         ... on Page {
           id
+					title
+          blocks
+        }
+				... on Property {
+          id
+					title
           blocks
         }
       }
